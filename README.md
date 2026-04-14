@@ -1,7 +1,7 @@
 
   # Government Services Workflow Orchestrator
 
-  A scalable workflow orchestration system designed to automate and manage complex government service processes across multiple systems. This project focuses on coordinating multi-step operations such as approvals, data validation, and service delivery while ensuring proper sequencing, dependency handling, and real-time monitoring.
+  A scalable workflow orchestration system designed to automate and manage complex government service processes across multiple systems. This project focuses on coordinating multi-step operations such as approvals, data validation and service delivery while ensuring dependency handling and real-time monitoring.
   
 
   ## Running the code
