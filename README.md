@@ -16,7 +16,7 @@
 
   The backend is wired to a lightweight Hugging Face Qwen model: `Qwen/Qwen2.5-0.5B-Instruct`.
 
-  By default, the app falls back to a fast local heuristic verifier unless you explicitly enable the local Qwen model and have it cached already. To enable the model path, set `QWEN_ENABLE_LOCAL_MODEL=1` before starting the backend and make sure the Hugging Face model is available locally.
+  By default, the app falls back to a fast local heuristic verifier unless you explicitly enable the Qwen model and have it cached already. To enable the model path, set `QWEN_ENABLE_LOCAL_MODEL=1` before starting the backend.
 
   Python dependencies for the verifier are listed in `backend/GovernmentServices.WorkflowApi/ml/requirements.txt`.
   
