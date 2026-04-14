@@ -1,7 +1,8 @@
 
-  # Government Services Workflow UI
+  # Government Services Workflow Orchestrator
 
-  This is a code bundle for Government Services Workflow UI. The original project is available at https://www.figma.com/design/3mm7DOmV8l8Bqo5FBDmLpS/Government-Services-Workflow-UI.
+  A scalable workflow orchestration system designed to automate and manage complex government service processes across multiple systems. This project focuses on coordinating multi-step operations such as approvals, data validation, and service delivery while ensuring proper sequencing, dependency handling, and real-time monitoring.
+  
 
   ## Running the code
 
