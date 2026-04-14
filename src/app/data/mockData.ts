@@ -1,0 +1,327 @@
+import type { Case, WorkflowStep, TimelineEvent, Document, Rule } from '../types';
+
+export const mockCases: Case[] = [
+  {
+    id: 'CASE-2024-001',
+    applicantName: 'Sarah Johnson',
+    serviceType: 'tax-filing',
+    status: 'in-progress',
+    priority: 'high',
+    submittedDate: '2024-03-15',
+    lastUpdated: '2024-04-01',
+    assignedTo: 'Tax Review Team',
+    currentStage: 'review',
+  },
+  {
+    id: 'CASE-2024-002',
+    applicantName: 'Michael Chen',
+    serviceType: 'benefit-approval',
+    status: 'pending',
+    priority: 'critical',
+    submittedDate: '2024-04-05',
+    lastUpdated: '2024-04-07',
+    assignedTo: 'Benefits Processing',
+    currentStage: 'verification',
+  },
+  {
+    id: 'CASE-2024-003',
+    applicantName: 'Emily Rodriguez',
+    serviceType: 'document-verification',
+    status: 'approved',
+    priority: 'medium',
+    submittedDate: '2024-03-28',
+    lastUpdated: '2024-04-06',
+    assignedTo: 'Document Services',
+    currentStage: 'completion',
+  },
+  {
+    id: 'CASE-2024-004',
+    applicantName: 'David Williams',
+    serviceType: 'license-renewal',
+    status: 'rejected',
+    priority: 'low',
+    submittedDate: '2024-04-02',
+    lastUpdated: '2024-04-05',
+    assignedTo: 'Licensing Department',
+    currentStage: 'review',
+  },
+  {
+    id: 'CASE-2024-005',
+    applicantName: 'Jessica Martinez',
+    serviceType: 'tax-filing',
+    status: 'completed',
+    priority: 'medium',
+    submittedDate: '2024-03-10',
+    lastUpdated: '2024-03-25',
+    assignedTo: 'Tax Review Team',
+    currentStage: 'completion',
+  },
+  {
+    id: 'CASE-2024-006',
+    applicantName: 'Robert Anderson',
+    serviceType: 'benefit-approval',
+    status: 'in-progress',
+    priority: 'high',
+    submittedDate: '2024-04-01',
+    lastUpdated: '2024-04-08',
+    assignedTo: 'Benefits Processing',
+    currentStage: 'approval',
+  },
+  {
+    id: 'CASE-2024-007',
+    applicantName: 'Amanda Thompson',
+    serviceType: 'document-verification',
+    status: 'pending',
+    priority: 'medium',
+    submittedDate: '2024-04-07',
+    lastUpdated: '2024-04-08',
+    currentStage: 'submission',
+  },
+  {
+    id: 'CASE-2024-008',
+    applicantName: 'James Wilson',
+    serviceType: 'license-renewal',
+    status: 'in-progress',
+    priority: 'low',
+    submittedDate: '2024-03-30',
+    lastUpdated: '2024-04-06',
+    assignedTo: 'Licensing Department',
+    currentStage: 'verification',
+  },
+];
+
+export const mockWorkflowSteps: WorkflowStep[] = [
+  {
+    id: 'step-1',
+    name: 'Submission',
+    stage: 'submission',
+    status: 'completed',
+    completedAt: '2024-03-15T10:30:00Z',
+    description: 'Initial application submitted',
+  },
+  {
+    id: 'step-2',
+    name: 'Document Verification',
+    stage: 'verification',
+    status: 'completed',
+    assignedTo: 'Verification Bot',
+    completedAt: '2024-03-15T11:45:00Z',
+    description: 'Automated document checks passed',
+  },
+  {
+    id: 'step-3',
+    name: 'Manual Review',
+    stage: 'review',
+    status: 'in-progress',
+    assignedTo: 'Tax Review Team',
+    description: 'Complex case requiring manual review',
+  },
+  {
+    id: 'step-4',
+    name: 'Approval',
+    stage: 'approval',
+    status: 'pending',
+    description: 'Awaiting final approval',
+  },
+  {
+    id: 'step-5',
+    name: 'Completion',
+    stage: 'completion',
+    status: 'pending',
+    description: 'Notification and archival',
+  },
+];
+
+export const mockTimelineEvents: TimelineEvent[] = [
+  {
+    id: 'evt-1',
+    timestamp: '2024-04-08T14:30:00Z',
+    action: 'Case Assigned',
+    user: 'System',
+    details: 'Case automatically assigned to Tax Review Team based on workload',
+  },
+  {
+    id: 'evt-2',
+    timestamp: '2024-04-08T10:15:00Z',
+    action: 'Documents Verified',
+    user: 'Verification Bot',
+    details: 'All required documents verified successfully',
+  },
+  {
+    id: 'evt-3',
+    timestamp: '2024-04-07T16:45:00Z',
+    action: 'Additional Information Requested',
+    user: 'John Smith',
+    details: 'Requested W-2 form for tax year 2023',
+  },
+  {
+    id: 'evt-4',
+    timestamp: '2024-04-07T09:20:00Z',
+    action: 'Documents Uploaded',
+    user: 'Sarah Johnson',
+    details: 'Uploaded 3 documents: Tax Form 1040, W-2, Schedule C',
+  },
+  {
+    id: 'evt-5',
+    timestamp: '2024-04-05T11:00:00Z',
+    action: 'Case Status Updated',
+    user: 'System',
+    details: 'Status changed from Pending to In Progress',
+  },
+  {
+    id: 'evt-6',
+    timestamp: '2024-03-15T10:30:00Z',
+    action: 'Case Created',
+    user: 'Sarah Johnson',
+    details: 'New tax filing application submitted',
+  },
+];
+
+export const mockDocuments: Document[] = [
+  {
+    id: 'doc-1',
+    name: 'Tax Form 1040.pdf',
+    type: 'application/pdf',
+    uploadedAt: '2024-04-07T09:20:00Z',
+    status: 'verified',
+  },
+  {
+    id: 'doc-2',
+    name: 'W-2 Form 2023.pdf',
+    type: 'application/pdf',
+    uploadedAt: '2024-04-07T09:20:00Z',
+    status: 'verified',
+  },
+  {
+    id: 'doc-3',
+    name: 'Schedule C.pdf',
+    type: 'application/pdf',
+    uploadedAt: '2024-04-07T09:20:00Z',
+    status: 'pending',
+  },
+  {
+    id: 'doc-4',
+    name: 'Identity Verification.jpg',
+    type: 'image/jpeg',
+    uploadedAt: '2024-04-05T14:15:00Z',
+    status: 'verified',
+  },
+];
+
+export const mockRules: Rule[] = [
+  {
+    id: 'rule-1',
+    name: 'High Priority Tax Cases',
+    description: 'Route tax cases with income > $150K to senior review team',
+    enabled: true,
+    conditions: [
+      { id: 'cond-1', field: 'serviceType', operator: 'equals', value: 'tax-filing' },
+      { id: 'cond-2', field: 'income', operator: 'greaterThan', value: '150000' },
+    ],
+    actions: [
+      { id: 'act-1', type: 'assign', target: 'Senior Tax Review Team' },
+      { id: 'act-2', type: 'setPriority', target: 'high' },
+    ],
+  },
+  {
+    id: 'rule-2',
+    name: 'Fast Track Benefits',
+    description: 'Expedite benefit applications for veterans',
+    enabled: true,
+    conditions: [
+      { id: 'cond-3', field: 'serviceType', operator: 'equals', value: 'benefit-approval' },
+      { id: 'cond-4', field: 'veteranStatus', operator: 'equals', value: 'true' },
+    ],
+    actions: [
+      { id: 'act-3', type: 'setPriority', target: 'critical' },
+      { id: 'act-4', type: 'skipStage', target: 'verification' },
+    ],
+  },
+  {
+    id: 'rule-3',
+    name: 'Document Verification Threshold',
+    description: 'Require manual review if document confidence < 85%',
+    enabled: true,
+    conditions: [
+      { id: 'cond-5', field: 'documentConfidence', operator: 'lessThan', value: '85' },
+    ],
+    actions: [
+      { id: 'act-5', type: 'assign', target: 'Manual Review Team' },
+      { id: 'act-6', type: 'addFlag', target: 'requires-manual-review' },
+    ],
+  },
+  {
+    id: 'rule-4',
+    name: 'Auto-Approve Simple Cases',
+    description: 'Automatically approve license renewals with no changes',
+    enabled: false,
+    conditions: [
+      { id: 'cond-6', field: 'serviceType', operator: 'equals', value: 'license-renewal' },
+      { id: 'cond-7', field: 'hasChanges', operator: 'equals', value: 'false' },
+    ],
+    actions: [
+      { id: 'act-7', type: 'approve', target: 'automatic' },
+    ],
+  },
+];
+
+export const dashboardMetrics = {
+  totalWorkflows: 1247,
+  activeCases: 342,
+  pendingApprovals: 87,
+  completedProcesses: 905,
+  avgProcessingTime: 4.2,
+  successRate: 94.5,
+  processingData: [
+    { month: 'Oct', cases: 180 },
+    { month: 'Nov', cases: 210 },
+    { month: 'Dec', cases: 195 },
+    { month: 'Jan', cases: 240 },
+    { month: 'Feb', cases: 225 },
+    { month: 'Mar', cases: 280 },
+  ],
+  statusDistribution: [
+    { name: 'Completed', value: 905, color: '#10b981' },
+    { name: 'In Progress', value: 234, color: '#3b82f6' },
+    { name: 'Pending', value: 108, color: '#f59e0b' },
+    { name: 'Rejected', value: 34, color: '#ef4444' },
+  ],
+};
+
+export const recentActivity = [
+  {
+    id: 'act-1',
+    case: 'CASE-2024-001',
+    action: 'Review Completed',
+    user: 'John Smith',
+    timestamp: '5 minutes ago',
+  },
+  {
+    id: 'act-2',
+    case: 'CASE-2024-006',
+    action: 'Approved',
+    user: 'System',
+    timestamp: '15 minutes ago',
+  },
+  {
+    id: 'act-3',
+    case: 'CASE-2024-002',
+    action: 'Documents Requested',
+    user: 'Emily Davis',
+    timestamp: '1 hour ago',
+  },
+  {
+    id: 'act-4',
+    case: 'CASE-2024-008',
+    action: 'Verification Completed',
+    user: 'Verification Bot',
+    timestamp: '2 hours ago',
+  },
+  {
+    id: 'act-5',
+    case: 'CASE-2024-007',
+    action: 'New Case Submitted',
+    user: 'Amanda Thompson',
+    timestamp: '3 hours ago',
+  },
+];

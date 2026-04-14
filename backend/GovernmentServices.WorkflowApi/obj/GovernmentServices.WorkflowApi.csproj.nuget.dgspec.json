@@ -1,0 +1,66 @@
+{
+  "format": 1,
+  "restore": {
+    "/Users/jaypatel/Downloads/Government Services Workflow UI/backend/GovernmentServices.WorkflowApi/GovernmentServices.WorkflowApi.csproj": {}
+  },
+  "projects": {
+    "/Users/jaypatel/Downloads/Government Services Workflow UI/backend/GovernmentServices.WorkflowApi/GovernmentServices.WorkflowApi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "/Users/jaypatel/Downloads/Government Services Workflow UI/backend/GovernmentServices.WorkflowApi/GovernmentServices.WorkflowApi.csproj",
+        "projectName": "GovernmentServices.WorkflowApi",
+        "projectPath": "/Users/jaypatel/Downloads/Government Services Workflow UI/backend/GovernmentServices.WorkflowApi/GovernmentServices.WorkflowApi.csproj",
+        "packagesPath": "/Users/jaypatel/.nuget/packages/",
+        "outputPath": "/Users/jaypatel/Downloads/Government Services Workflow UI/backend/GovernmentServices.WorkflowApi/obj/",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "/Users/jaypatel/.nuget/NuGet/NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net7.0"
+        ],
+        "sources": {
+          "/usr/local/share/dotnet/library-packs": {},
+          "/usr/local/share/dotnet/sdk/7.0.308/Sdks/Microsoft.NET.Sdk.Web/library-packs": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net7.0": {
+            "targetAlias": "net7.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net7.0": {
+          "targetAlias": "net7.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/7.0.308/RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}

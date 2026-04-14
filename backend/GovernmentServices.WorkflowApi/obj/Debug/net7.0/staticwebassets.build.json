@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "4pmdq25Rb3Ikbe1EowcSDDyxhcaKesEhKQkYBYRMc2s=",
+  "Source": "GovernmentServices.WorkflowApi",
+  "BasePath": "_content/GovernmentServices.WorkflowApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
