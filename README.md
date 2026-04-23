@@ -6,7 +6,7 @@
   ## Project Output
 
 <p align="center">
-  <img src="images/Dashboard.png" width="250" height="140">
+  <img src="images/Dashboard.png" width="250" height="145">
   <img src="images/Workflows.png" width="250" height="255">
   <img src="images/Cases.png" width="250" height="255">
   <img src="images/Rules_Engine.png" width="250" height="255">
