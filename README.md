@@ -7,7 +7,7 @@
 
 <p align="center">
   <img src="images/Dashboard.png" width="250" height="255">
-  <img src="images/Workflow.png" width="250" height="255">
+  <img src="images/Workflows.png" width="250" height="255">
   <img src="images/Cases.png" width="250" height="255">
   <img src="images/Rules_Engine.png" width="250" height="255">
   <img src="images/Reports.png" width="250" height="255">
